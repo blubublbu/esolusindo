@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Perpustakaan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistem Perpustakaan</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('books')">Manajemen Buku</button>
+            <button class="tab-button" onclick="openTab('users')">Manajemen User</button>
+            <button class="tab-button" onclick="openTab('loans')">Peminjaman</button>
+        </div>
+
+        <!-- Tab Buku -->
+        <div id="books" class="tab-content active">
+            <div class="form-section">
+                <h3>Tambah Buku Baru</h3>
+                <form id="addBookForm">
+                    <input type="text" id="judul" placeholder="Judul Buku" required>
+                    <input type="text" id="penulis" placeholder="Penulis" required>
+                    <input type="number" id="stok" placeholder="Stok" required min="0">
+                    <button type="submit">Tambah Buku</button>
+                </form>
+            </div>
+
+            <div class="list-section">
+                <h3>Daftar Buku</h3>
+                <div id="booksList"></div>
+            </div>
+        </div>
+
+        <!-- Tab Users -->
+        <div id="users" class="tab-content">
+            <div class="form-section">
+                <h3>Tambah User Baru</h3>
+                <form id="addUserForm">
+                    <input type="text" id="nama" placeholder="Nama User" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <button type="submit">Tambah User</button>
+                </form>
+            </div>
+
+            <div class="list-section">
+                <h3>Daftar User</h3>
+                <div id="usersList"></div>
+            </div>
+        </div>
+
+        <!-- Tab Peminjaman -->
+        <div id="loans" class="tab-content">
+            <div class="form-section">
+                <h3>Peminjaman Baru</h3>
+                <form id="addLoanForm">
+                    <select id="user_id" required>
+                        <option value="">Pilih User</option>
+                    </select>
+                    <select id="book_id" required>
+                        <option value="">Pilih Buku</option>
+                    </select>
+                    <button type="submit">Pinjam Buku</button>
+                </form>
+            </div>
+
+            <div class="list-section">
+                <h3>Daftar Transaksi Peminjaman</h3>
+                <div id="loansList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
